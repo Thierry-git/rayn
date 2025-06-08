@@ -1,0 +1,7 @@
+build:windows --cxxopt=/std:c++latest
+test:windows --cxxopt=/std:c++latest
+
+build:posix -cxxopt=-std=c++23
+test:posix -cxxopt=-std=c++23
+
+build --config=windows

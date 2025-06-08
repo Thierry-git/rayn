@@ -1,0 +1,21 @@
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+cc_library(
+    name = "static",
+    visibility = [
+        "//main:__pkg__",
+        "//test:__pkg__",
+    ],
+    deps = [
+        "//lib/linalg",
+        "//lib/raytracing",
+    ],
+)
+
+test_suite(
+    name = "static_unittest",
+    tests = [
+        "//lib/linalg:linalg_unittest",
+        "//lib/raytracing:raytracing_unittest",
+    ],
+)

@@ -1,0 +1,11 @@
+load("@rules_cc//cc:cc_test.bzl", "cc_test")
+
+cc_test(
+    name = "simple_assertions",
+    size = "small",
+    srcs = ["simple_assertions_test.cc"],
+    deps = [
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)
