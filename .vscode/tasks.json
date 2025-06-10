@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-main",
+            "type": "bazel",
+            "command": "build",
+            "targets": ["//main"],
+            "options": [
+                "--compilation_mode=dbg",
+                "--copt=/Z7",
+                "--linkopt=/DEBUG:FASTLINK"
+            ]
+        }
+    ]
+}
