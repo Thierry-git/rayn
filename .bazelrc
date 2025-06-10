@@ -1,7 +1,4 @@
-build:windows --cxxopt=/std:c++latest
-test:windows --cxxopt=/std:c++latest
+common:windows --cxxopt=/std:c++17
+common:posix    -cxxopt=-std=c++17
 
-build:posix -cxxopt=-std=c++23
-test:posix -cxxopt=-std=c++23
-
-build --config=windows
+common --config=windows

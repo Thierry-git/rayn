@@ -3,8 +3,10 @@ load("@rules_cc//cc:cc_test.bzl", "cc_test")
 
 cc_library(
     name = "linalg",
-    srcs = glob(["*.cc"]),
-    hdrs = glob(["*.h"]),
+    srcs = ["matrix.cc"],
+    hdrs = ["matrix.h"],
+    strip_include_prefix = "",
+    include_prefix = "rayn/linalg",
     visibility = [
         "//lib:__pkg__",
         "//lib/raytracing:__pkg__",

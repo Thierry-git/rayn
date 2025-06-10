@@ -1,19 +1,28 @@
 load("@rules_cc//cc:cc_library.bzl", "cc_library")
 
+package_group(
+    name = "rayn_root",
+    packages = ["//"],
+)
+
 cc_library(
-    name = "static",
-    visibility = [
-        "//main:__pkg__",
-        "//test:__pkg__",
-    ],
+    name = "lib",
+    hdrs = glob(["headers/*.h"]),
+    strip_include_prefix = "headers",
+    include_prefix = "rayn",
     deps = [
         "//lib/linalg",
         "//lib/raytracing",
     ],
+    visibility = [
+        ":rayn_root",
+        "//main:__pkg__",
+        "//test:__pkg__",
+    ],
 )
 
 test_suite(
-    name = "static_unittest",
+    name = "lib_unittest",
     tests = [
         "//lib/linalg:linalg_unittest",
         "//lib/raytracing:raytracing_unittest",
