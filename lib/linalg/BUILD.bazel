@@ -7,10 +7,7 @@ cc_library(
     hdrs = ["matrix.h"],
     strip_include_prefix = "",
     include_prefix = "rayn/linalg",
-    visibility = [
-        "//lib:__pkg__",
-        "//lib/raytracing:__pkg__",
-    ],
+    visibility = ["//visibility:public"],
 )
 
 cc_test(

@@ -7,17 +7,10 @@ package_group(
 
 cc_library(
     name = "lib",
-    hdrs = glob(["headers/*.h"]),
-    strip_include_prefix = "headers",
-    include_prefix = "rayn",
+    visibility = ["//visibility:public"],
     deps = [
         "//lib/linalg",
         "//lib/raytracing",
-    ],
-    visibility = [
-        ":rayn_root",
-        "//main:__pkg__",
-        "//test:__pkg__",
     ],
 )
 
